@@ -49,7 +49,7 @@ def to_matrix(x, dtype=np.double, copy=False):
 
   if (isinstance(x, np.ndarray) and x.dtype == dtype and x.flags.c_contiguous):
     if copy: # Copy the matrix if required.
-      return x.copy("C"), False
+      return x.copy("C"), True
     else:
       return x, False
   elif (isinstance(x, np.ndarray) and x.dtype == dtype and x.flags.f_contiguous):
